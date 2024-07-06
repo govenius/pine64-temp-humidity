@@ -13,13 +13,20 @@ Note that this I2C sensor can function also 3.3V, however, it is dangerous to us
 
 ![](images/wiring.jpg)
 
-## Building
+## Installing Go (on Debian/Ubuntu)
 
     sudo apt-get -y install golang
     echo 'export GOPATH=$HOME/go' >> ~/.bashrc
     . ~/.bashrc
-    go get golang.org/x/exp/io/i2c
+
+## Building the package
+
     go build pmsd001.go
+
+If that doesn't work, you can try deleting go.mod and recreating it with:
+
+    go mod init github.com/govenius/pine64-temp-humidity
+    go mod tidy
 
 ## Usage
 
